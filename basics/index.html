@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="someelement">
+      {{ greeting }} Nice to meet vue.
+      <!--'greeting' is in a mustache template-->
+    </div>
+    <div id="listofstuff">
+        <ul>
+            <li v-for="stuff in things"><!--v-for is a directive-->
+                {{ stuff }}
+            </li>
+        </ul>
+    </div>
+    <script>
+      Vue.config.devtools = true;
+      new Vue({
+        el: "#someelement", //element to which the vue instance is applied
+        data: {
+          //used to manage the state of the application
+          //establishes connection between mustache template and actual data
+          greeting: "Hello World!",
+        },
+      });
+      new Vue({
+          el:'#listofstuff',
+          data:{
+              things:[
+                  "something",
+                  "something else",
+                  "I like lists",
+                  "the end"
+              ]
+          }
+      })
+    </script>
+  </body>
+</html>
+<!--
+    DIRECTIVES
+
+    v-text
+    v-for
+    v-html
+    v-if
+    v-else
+    v-else-if
+    v-for...etc.
+-->

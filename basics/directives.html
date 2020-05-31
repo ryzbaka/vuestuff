@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Directives</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <ul>
+        <li v-for="num in 5">
+          <!--a vue instance has to be attached in order for irectives to work-->
+          {{ num }}
+        </li>
+      </ul>
+    </div>
+    <div id="model">
+      <h3>Type here</h3>
+      <textarea v-model="userInput"></textarea>
+      <p>{{ userInput }}</p>
+    </div>
+    <script>
+      new Vue({
+        el: "#app",
+      });
+      new Vue({
+        el: "#model",
+        /*data: {
+          userInput: "this is a good place to type",
+        },*/
+        data(){
+            return {userInput: "this is a good place to type stuff"}
+        }
+      });
+    </script>
+  </body>
+</html>
